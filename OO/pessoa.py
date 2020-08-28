@@ -18,3 +18,12 @@ if __name__ == '__main__':
     print(carlos.idade)
     for filho in carlos.filhos:
         print(filho.nome)
+    carlos.sobrenome = "D'Afonseca"
+    del carlos.filhos     # Remover um atributo de objeto.
+    print(carlos.__dict__)
+    print(lucas.__dict__)
+
+
+
+# Atributo especial "__dict__" retorna todos os atributos definidos (tanto pelo "__init__" quanto dinâmicos)
+# de um determinado objeto.
