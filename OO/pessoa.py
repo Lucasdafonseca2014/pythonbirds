@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=None):
         self.nome = nome
         self.idade = idade
@@ -20,9 +22,14 @@ if __name__ == '__main__':
         print(filho.nome)
     carlos.sobrenome = "D'Afonseca"
     del carlos.filhos     # Remover um atributo de objeto.
+    carlos.olhos = 1
     print(carlos.__dict__)
     print(lucas.__dict__)
-
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(carlos.olhos)
+    print(lucas.olhos)
+    print(id(Pessoa.olhos), id(carlos.olhos), id(lucas.olhos))
 
 
 # Atributo especial "__dict__" retorna todos os atributos definidos (tanto pelo "__init__" quanto dinâmicos)
