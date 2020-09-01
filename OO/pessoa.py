@@ -1,6 +1,14 @@
 class Pessoa:
     olhos = 2
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):       # Se conecta com a classe através do 'cls', assim como os métodos
+        return f'{cls} - olhos {cls.olhos}'    # utilizando o 'self'.
+
     def __init__(self, *filhos, nome=None, idade=None):
         self.nome = nome
         self.idade = idade
