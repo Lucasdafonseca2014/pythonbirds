@@ -1,0 +1,23 @@
+from OO.carro_1.carro import Carro
+
+vectra = Carro(modelo='Vectra', cor='preto')
+vectra.acelerar()
+vectra.acelerar()
+vectra.acelerar()
+vectra.acelerar()
+vectra.direcao()
+vectra.velocidade()
+vectra.frear()
+vectra.acelerar()
+vectra.esquerda()
+vectra.esquerda()
+vectra.esquerda()
+vectra.frear()
+vectra.velocidade()
+vectra.direcao()
+
+print(f'Velocidade: {vectra.velocidade()} m/s')
+print(f'Direção: {vectra.direcao()}')
+print(f'Modelo do carro: {vectra.modelo}')
+print(f'Cor do carro: {vectra.cor}')
+print(dir)
