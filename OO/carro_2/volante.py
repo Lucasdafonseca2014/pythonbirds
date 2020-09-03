@@ -1,16 +1,26 @@
-from OO.carro_2.direcoes import Direcoes
-
-
 class Volante:
-
     def __init__(self):
-        self.__direct = Direcoes()
-
-    def virar_esquerda(self):
-        self.__direct.esquerda()
+        self.dir = 'norte'
 
     def virar_direita(self):
-        self.__direct.direita()
+        if self.dir == 'norte':
+            self.dir = 'leste'
+        elif self.dir == 'leste':
+            self.dir = 'sul'
+        elif self.dir == 'sul':
+            self.dir = 'oeste'
+        elif self.dir == 'oeste':
+            self.dir = 'norte'
+
+    def virar_esquerda(self):
+        if self.dir == 'norte':
+            self.dir = 'oeste'
+        elif self.dir == 'oeste':
+            self.dir = 'sul'
+        elif self.dir == 'sul':
+            self.dir = 'leste'
+        elif self.dir == 'leste':
+            self.dir = 'norte'
 
     def mostra_direcao(self):
-        return self.__direct.dir
+        return self.dir
