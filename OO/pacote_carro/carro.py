@@ -1,10 +1,10 @@
-from OO.carro.motor import Motor
-from OO.carro.volante import Volante
+from OO.pacote_carro.motor import Motor
+from OO.pacote_carro.volante import Volante
 
 
 class Carro:
     """
-        Classe que implementa a experiência de um carro, possuindo um motor e um volante.
+        Classe que implementa a experiência de um pacote_carro, possuindo um motor e um volante.
 
         * Atributos de dado: Modelo, cor, motor, volante.
         * Métodos: Acelerar, frear, virar à direita, virar à esquerda, mostra velocidade, mostra direção.
