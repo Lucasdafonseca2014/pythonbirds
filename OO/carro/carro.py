@@ -1,5 +1,5 @@
-from OO.carro_2.motor import Motor
-from OO.carro_2.volante import Volante
+from OO.carro.motor import Motor
+from OO.carro.volante import Volante
 
 
 class Carro:

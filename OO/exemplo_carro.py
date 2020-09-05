@@ -1,4 +1,4 @@
-from OO.carro_2.carro import Carro
+from OO.carro.carro import Carro
 
 kombi = Carro(modelo='Kombi', cor='Branco')
 kombi.acelerar()
