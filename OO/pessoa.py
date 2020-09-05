@@ -18,10 +18,14 @@ class Pessoa:
         return f'Olá {id(self)}'
 
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    lucas = Pessoa(nome='Lucas', idade=28)
-    carlos = Pessoa(lucas, nome='Carlos', idade=62)
-    print(Pessoa.cumprimentar(carlos))
+    lucas = Homem(nome='Lucas', idade=28)  # lucas pertence à classe 'Homem' e portanto, pertence à classe "Pessoa".
+    carlos = Homem(lucas, nome='Carlos', idade=62)  # Herança entre classes.
+    print(Homem.cumprimentar(carlos))
     print(id(carlos))
     print(carlos.cumprimentar())
     print(carlos.nome)
@@ -38,7 +42,8 @@ if __name__ == '__main__':
     print(carlos.olhos)
     print(lucas.olhos)
     print(id(Pessoa.olhos), id(carlos.olhos), id(lucas.olhos))
-
-
+    print(Homem.olhos)
+    print(isinstance(lucas, Homem))  # Amostra do POLIMORFISMO de um objeto. O mesmo objeto pertence à duas classes
+    print(isinstance(lucas, Pessoa))  # ao mesmo tempo (uma classe é a mãe e a outra a filha - HERANÇA).
 # Atributo especial "__dict__" retorna todos os atributos definidos (tanto pelo "__init__" quanto dinâmicos)
 # de um determinado objeto.
