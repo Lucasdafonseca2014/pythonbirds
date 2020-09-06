@@ -22,8 +22,12 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):  # Subclasse mutante(herda da classe pessoa). Exemplo de sobrescrita do atributo "olhos".
+    olhos = 3
+
+
 if __name__ == '__main__':
-    lucas = Homem(nome='Lucas', idade=28)  # lucas pertence à classe 'Homem' e portanto, pertence à classe "Pessoa".
+    lucas = Mutante(nome='Lucas', idade=28)  # lucas pertence à classe 'Mutante' e portanto, pertence à classe "Pessoa".
     carlos = Homem(lucas, nome='Carlos', idade=62)  # Herança entre classes.
     print(Homem.cumprimentar(carlos))
     print(id(carlos))
@@ -37,7 +41,6 @@ if __name__ == '__main__':
     carlos.olhos = 1
     print(carlos.__dict__)
     print(lucas.__dict__)
-    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(carlos.olhos)
     print(lucas.olhos)
@@ -45,5 +48,8 @@ if __name__ == '__main__':
     print(Homem.olhos)
     print(isinstance(lucas, Homem))  # Amostra do POLIMORFISMO de um objeto. O mesmo objeto pertence à duas classes
     print(isinstance(lucas, Pessoa))  # ao mesmo tempo (uma classe é a mãe e a outra a filha - HERANÇA).
+    print(lucas.olhos)
+    print(type(lucas))
+
 # Atributo especial "__dict__" retorna todos os atributos definidos (tanto pelo "__init__" quanto dinâmicos)
 # de um determinado objeto.
