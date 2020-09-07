@@ -15,19 +15,27 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}.'
 
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimento = super().cumprimentar()
+        return f'{cumprimento} Aperto de mão!'
 
 
 class Mutante(Pessoa):  # Subclasse mutante(herda da classe pessoa). Exemplo de sobrescrita do atributo "olhos".
     olhos = 3
+    rabo = 1
+    garra = 2
+
+    def __init__(self, *filhos, nome, idade):
+        super().__init__(*filhos, nome=nome, idade=idade)
+        self.visao = 'raioX'
 
 
 if __name__ == '__main__':
-    lucas = Mutante(nome='Lucas', idade=28)  # lucas pertence à classe 'Mutante' e portanto, pertence à classe "Pessoa".
+    lucas = Mutante('jose', 'pedro', 'maria', nome='Lucas', idade=28)  # lucas pertence à classe 'Mutante' e portanto, pertence à classe "Pessoa".
     carlos = Homem(lucas, nome='Carlos', idade=62)  # Herança entre classes.
     print(Homem.cumprimentar(carlos))
     print(id(carlos))
@@ -37,7 +45,7 @@ if __name__ == '__main__':
     for filho in carlos.filhos:
         print(filho.nome)
     carlos.sobrenome = "D'Afonseca"
-    del carlos.filhos     # Remover um atributo de objeto.
+    # del carlos.filhos     # Remover um atributo de objeto.
     carlos.olhos = 1
     print(carlos.__dict__)
     print(lucas.__dict__)
@@ -50,6 +58,8 @@ if __name__ == '__main__':
     print(isinstance(lucas, Pessoa))  # ao mesmo tempo (uma classe é a mãe e a outra a filha - HERANÇA).
     print(lucas.olhos)
     print(type(lucas))
+    print(carlos.cumprimentar())
+    print(lucas.cumprimentar())
 
 # Atributo especial "__dict__" retorna todos os atributos definidos (tanto pelo "__init__" quanto dinâmicos)
 # de um determinado objeto.
