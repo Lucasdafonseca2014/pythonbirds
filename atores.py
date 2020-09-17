@@ -126,7 +126,7 @@ class Passaro(Ator):
             delta_t = tempo - self._tempo_de_lancamento
             self.calcular_posicao_vertical(delta_t)
             self.calcular_posicao_horizontal(delta_t)
-        return self.x, self.y
+        return super().calcular_posicao(tempo)
 
 
     def lancar(self, angulo, tempo_de_lancamento):
